@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/software_engineering_with_dart_languages.iml" filepath="$PROJECT_DIR$/software_engineering_with_dart_languages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design_pattern_with_dart.iml" filepath="$PROJECT_DIR$/design_pattern_with_dart.iml" />
     </modules>
   </component>
 </project>
