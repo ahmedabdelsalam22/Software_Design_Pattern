@@ -1,0 +1,73 @@
+
+first i define interface => NotificationService and create method in it ..
+//
+abstract class NotificationService {
+  void notifyUser();
+}
+//
+
+then i create three classes ( SMSNotification , EmailNotification , PushNotification) and make them implement the interface ..
+
+//
+class SMSNotification implements NotificationService {
+  @override
+  void notifyUser() {
+    print("Sending an SMS notification");
+  }
+}
+
+
+class EmailNotification implements NotificationService {
+  @override
+  void notifyUser() {
+    print("Sending an e-mail notification");
+  }
+}
+
+
+class PushNotification implements NotificationService {
+  @override
+  void notifyUser() {
+    print("Sending a push notification");
+  }
+}
+
+//
+
+after that i create NotificationFactory which responsible of creating object from (SMSNotification , EmailNotification , PushNotification) depend on notification type
+which user decide (all of this in method name createObject in NotificationFactory class
+
+//
+class NotificationFactory {
+  createObject(String notificationType) {
+    if (notificationType == "SMS") {
+      return SMSNotification();
+    } else if (notificationType == "EMAIL") {
+      return EmailNotification();
+    } else if (notificationType == "PUSH") {
+      return PushNotification();
+    } else {
+      return "No Type found";
+    }
+  }
+}
+//
+
+finally i used client side (main.dart) and get NotificationService to define createObject methode and give it notification type .. then i take object from
+NotificationFactory to get createObject Method ..
+
+
+//
+void main() {
+  NotificationFactory notificationFactory = NotificationFactory();
+
+  NotificationService notificationService =
+      notificationFactory.createObject('SMS');
+
+  notificationService.notifyUser();
+}
+//
+
+
+
+
